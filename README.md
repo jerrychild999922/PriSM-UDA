@@ -19,6 +19,16 @@ Facial landmark detectors trained on real human faces often fail to generalize e
 
 ---
 
+## Getting Started
+
+### Requirements
+
+To install all required dependencies, simply run:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Directory Structure
 To run our code, please organize your workspace as follows:
 
@@ -106,7 +116,7 @@ Before starting the training process, you need to preprocess the target dataset 
 
 Please run the following isolated scripts sequentially to prepare these files:
 
-### 1. Extract Reference Face Parsing Maps ($M_{\text{ref}}$)
+#### 1. Extract Reference Face Parsing Maps ($M_{\text{ref}}$)
 Run `extract_parsing.py` to generate semantic parsing PNGs using the pre-trained EHANet face parser:
 ```bash
 cd preprocess/face_parsing
@@ -116,7 +126,7 @@ python extract_parsing.py --arch FaceParseNet101 \
                           --output_dir ../../Dataset/AF_dataset/parsing
 ```
 
-### 2. Extract StyleGAN Latent Codes ($w_a$)
+#### 2. Extract StyleGAN Latent Codes ($w_a$)
 Run `inversion_whole.py` to execute latent optimization and save $w^+$ representations (`.pt` files) for each image:
 ```bash
 cd preprocess/GAN_inversion
@@ -147,14 +157,14 @@ We provide an automated evaluation pipeline that computes Normalized Mean Error 
 > 💡 **Quick Reproducibility**:
 > You can directly download our best adapted model weights (`UDA_Cariface.pt` and `UDA_Artiface.pt`) from our [Google Drive Link](https://drive.google.com/drive/folders/1iqm419Iha1NL-6DGpUU1VvcEt4ZwrcHP?usp=sharing), place them in `pretrained_models/`, and run the scripts below to immediately reproduce the quantitative results reported in our paper.
 
-### 1. Full Evaluation and Save Visualizations (Default)
+#### 1. Full Evaluation and Save Visualizations (Default)
 To evaluate your checkpoint on all three benchmarks and save visualizations with landmark overlays:
 ```bash
 python test.py --checkpoint pretrained_models/UDA_Artiface.pt --gpu_id 0
 ```
 *Visualizations will be cleanly organized and saved in `./visualizations/300W/`, `./visualizations/CariFace/`, and `./visualizations/ArtiFace/` respectively.*
 
-### 2. Evaluate Specific Benchmark Without Visualizations
+#### 2. Evaluate Specific Benchmark Without Visualizations
 If you want to disable visualization output and test on specific datasets only:
 ```bash
 # Evaluate only on ArtiFace without saving image outputs
