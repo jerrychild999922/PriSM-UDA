@@ -7,7 +7,6 @@
 ² *MediaTek, Hsinchu, Taiwan*  
 
 
-## Teaser
 ![teaser](assets/teaser.png) 
 
 
@@ -99,12 +98,13 @@ Please download all the necessary pretrained weights from our [Google Drive Link
 
 ---
 
-## Data Preprocessing (Optional)
+## Data Preprocessing 
 
-> 💡 **Note for Direct Download**:
-> If you download our precomputed files from Google Drive, you **do not** need to run these preprocessing steps. Simply extract and place the downloaded `parsing/` and `output_batch/` folders directly into `Dataset/CariFace_dataset/` and `Dataset/AF_dataset/` respectively (as illustrated in the **Data Preparation** section above).
+Before starting the training process, you need to preprocess the target dataset (e.g., `AF_dataset` or `CariFace_dataset`) to extract two essential representations:
+1. **Reference Face Parsing Maps ($M_{\text{ref}}$)**
+2. **StyleGAN Appearance Latent Codes ($w_a$)**
 
-If you want to run PriSM on your own **custom stylized dataset**, you can extract these necessary representations using our isolated tools in `preprocess/`:
+Please run the following isolated scripts sequentially to prepare these files:
 
 ### 1. Extract Reference Face Parsing Maps ($M_{\text{ref}}$)
 Run `extract_parsing.py` to generate semantic parsing PNGs using the pre-trained EHANet face parser:
@@ -112,16 +112,16 @@ Run `extract_parsing.py` to generate semantic parsing PNGs using the pre-trained
 cd preprocess/face_parsing
 python extract_parsing.py --arch FaceParseNet101 \
                           --weight_path ../../pretrained_models/38_G.pth \
-                          --input_dir ../../Dataset/YOUR_DATASET/images \
-                          --output_dir ../../Dataset/YOUR_DATASET/parsing
+                          --input_dir ../../Dataset/AF_dataset/images \
+                          --output_dir ../../Dataset/AF_dataset/parsing
 ```
 
 ### 2. Extract StyleGAN Latent Codes ($w_a$)
-Run `inversion_whole.py` to execute latent optimization and save latent representations (`.pt` files containing $w^+$) for each image:
+Run `inversion_whole.py` to execute latent optimization and save $w^+$ representations (`.pt` files) for each image:
 ```bash
 cd preprocess/GAN_inversion
-python inversion_whole.py --input_dir ../../Dataset/YOUR_DATASET/images \
-                          --output_dir ../../Dataset/YOUR_DATASET/output_batch \
+python inversion_whole.py --input_dir ../../Dataset/AF_dataset/images \
+                          --output_dir ../../Dataset/AF_dataset/output_batch \
                           --ckpt ../../pretrained_models/styleganex_inversion.pt
 ```
 
