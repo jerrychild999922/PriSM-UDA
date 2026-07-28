@@ -1,0 +1,14 @@
+torch>=1.7.1
+torchvision
+numpy
+opencv-python
+scipy
+kornia
+Pillow
+matplotlib
+tqdm
+ninja
+dlib
+tensorboardX
+pandas
+inplace-abn
