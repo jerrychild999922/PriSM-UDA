@@ -189,4 +189,4 @@ If you find PriSM useful for your research, please cite our paper:
 
 ## Acknowledgements
 
-This codebase is heavily built upon [CFW (Generalizable Face Landmarking)](https://github.com/Dixin-Lab/generalized-face-landmarker). We also extend our sincere gratitude to the authors of [SLPT](https://github.com/njustslat/SLPT), [StyleGANEX](https://github.com/sczhou/StyleGANEX), and [EHANet](https://github.com/E-H-A-Net) for releasing their valuable codebases to the research community.
+This codebase is heavily built upon [CFW (Generalizable Face Landmarking)](https://github.com/Dixin-Lab/generalized-face-landmarker). We also extend our sincere gratitude to the authors of [SLPT](https://github.com/Jiahao-UTS/SLPT-master), [StyleGANEX](https://github.com/williamyang1991/StyleGANEX), and [EHANet](https://github.com/JACKYLUO1991/FaceParsing) for releasing their valuable codebases to the research community.
