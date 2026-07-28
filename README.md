@@ -65,7 +65,6 @@ Please download all the necessary pretrained weights from our [Google Drive Link
 | `styleganex_mask2face.pt` | StyleGANEX (pSp) facial style-mixing model. Used as the StyleMix Network for target image reconstruction. | [StyleGANEX (Yang et al., ICCV 2023)](https://github.com/williamyang1991/StyleGANEX) |
 | `styleganex_inversion.pt` | StyleGANEX inversion optimization model. Used in `preprocess/GAN_inversion` for image latent optimization. | [StyleGANEX (Yang et al., ICCV 2023)](https://github.com/williamyang1991/StyleGANEX) |
 | `38_G.pth` | Face parsing generator (EHANet). Used in `preprocess/face_parsing` to extract reference parsing maps ($M_{\text{ref}}$). | Architecture: EHANet (Luo et al., 2020) / Weights: [TracelessLe](https://github.com/TracelessLe/FaceParsing.PyTorch) |
-| `shape_predictor_68_face_landmarks.dat` | Dlib 68-point shape predictor. Used for face alignment during GAN inversion preprocessing. | [Dlib Official](http://dlib.net/) |
 | `UDA_Cariface.pt` | Our final adapted landmark alignment network checkpoint on the CariFace benchmark. | Ours (PriSM, This work) |
 | `UDA_Artiface.pt` | Our final adapted landmark alignment network checkpoint on the ArtiFace benchmark. | Ours (PriSM, This work) |
 
