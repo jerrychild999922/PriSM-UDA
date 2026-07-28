@@ -1,4 +1,9 @@
-# PriSM (ECCV 2026)
-Official PyTorch implementation of our ECCV 2026 paper "PriSM: Parsing and Style-Mixed Consistency for Unsupervised Domain Adaptation in Facial Landmark Detection".
+# PriSM: Parsing and Style-Mixed Consistency for Unsupervised Domain Adaptation in Facial Landmark Detection (ECCV 2026)
 
-Code will be released soon!
+# PriSM: Parsing and Style-Mixed Consistency for Unsupervised Domain Adaptation in Facial Landmark Detection (ECCV 2024)
+
+### [Paper] | [Project Page (Optional)]
+
+**Chieh-Yu Yang¹**, **Hou-Ning Hu²**, **Sykai Chen²**, **Yu-Lun Liu¹**, and **Yen-Yu Lin¹**  
+¹ *National Yang Ming Chiao Tung University (NYCU), Hsinchu, Taiwan*  
+² *MediaTek, Hsinchu, Taiwan*  
