@@ -1,6 +1,5 @@
 import argparse
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 import logging
 from datetime import datetime
 from argparse import Namespace
