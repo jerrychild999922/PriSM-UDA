@@ -34,8 +34,6 @@ PriSM-UDA/
 ├── data/                         # Dataloader scripts
 ├── Landmark2/                    # Source code for the baseline SLPT landmark alignment network
 ├── models/                       # PriSM model modules (PSP, Segmentation)
-│   ├── psp.py
-│   └── segmentation.py
 ├── preprocess/                   # Isolated preprocessing scripts
 │   ├── face_parsing/             (Face parsing extraction tool)
 │   └── GAN_inversion/            (StyleGAN latent inversion tool)
