@@ -53,19 +53,21 @@ PriSM-UDA/
 │
 └── test.py                       # Evaluation and visualization script
 
+```
+
 ## Pretrained Models
 Please download all the necessary pretrained weights from our [Google Drive Link] and place them inside the `pretrained_models/` directory:
 
 | Filename | Description | Original Source / Credit |
 | :--- | :--- | :--- |
-| `model_best.pth` | Baseline source landmark detector (SLPT) pretrained on 300W. Used as initial weights for our landmark alignment network. | [SLPT (Xia et al., CVPR 2022)](https://github.com/njustslat/SLPT) |
-| `landmark_segmentation_model2_50.pth` | Landmark segmentation network. Serves as our Point-to-Parse (P2P) module. | **Ours (PriSM, This work)** |
-| `styleganex_mask2face.pt` | StyleGANEX (pSp) facial style-mixing model. Used as the StyleMix Network for target image reconstruction. | [StyleGANEX (Yang et al., ICCV 2023)](https://github.com/sczhou/StyleGANEX) |
-| `styleganex_inversion.pt` | StyleGANEX inversion optimization model. Used in `preprocess/GAN_inversion` for image latent optimization. | [StyleGANEX (Yang et al., ICCV 2023)](https://github.com/sczhou/StyleGANEX) |
-| `38_G.pth` | Face parsing generator (EHANet). Used in `preprocess/face_parsing` to extract reference parsing maps ($M_{\text{ref}}$). | [EHANet (Luo et al., 2020)](https://github.com/E-H-A-Net) |
+| `model_best.pth` | Baseline source landmark detector (SLPT) pretrained on 300W. Used as initial weights for our landmark alignment network. | [SLPT (Xia et al., CVPR 2022)](https://github.com/Jiahao-UTS/SLPT-master) |
+| `landmark_segmentation_model2_50.pth` | Landmark segmentation network. Serves as our Point-to-Parse (P2P) module. | Ours (PriSM, This work) |
+| `styleganex_mask2face.pt` | StyleGANEX (pSp) facial style-mixing model. Used as the StyleMix Network for target image reconstruction. | [StyleGANEX (Yang et al., ICCV 2023)](https://github.com/williamyang1991/StyleGANEX) |
+| `styleganex_inversion.pt` | StyleGANEX inversion optimization model. Used in `preprocess/GAN_inversion` for image latent optimization. | [StyleGANEX (Yang et al., ICCV 2023)](https://github.com/williamyang1991/StyleGANEX) |
+| `38_G.pth` | Face parsing generator (EHANet). Used in `preprocess/face_parsing` to extract reference parsing maps ($M_{\text{ref}}$). | Architecture: EHANet (Luo et al., 2020) / Weights: [TracelessLe](https://github.com/TracelessLe/FaceParsing.PyTorch) |
 | `shape_predictor_68_face_landmarks.dat` | Dlib 68-point shape predictor. Used for face alignment during GAN inversion preprocessing. | [Dlib Official](http://dlib.net/) |
-| `UDA_Cariface.pt` | Our final adapted landmark alignment network checkpoint on the CariFace benchmark. | **Ours (PriSM, This work)** |
-| `UDA_Artiface.pt` | Our final adapted landmark alignment network checkpoint on the ArtiFace benchmark. | **Ours (PriSM, This work)** |
+| `UDA_Cariface.pt` | Our final adapted landmark alignment network checkpoint on the CariFace benchmark. | Ours (PriSM, This work) |
+| `UDA_Artiface.pt` | Our final adapted landmark alignment network checkpoint on the ArtiFace benchmark. | Ours (PriSM, This work) |
 
 
 
