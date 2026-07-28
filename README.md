@@ -6,17 +6,14 @@
 ¹ *National Yang Ming Chiao Tung University (NYCU), Hsinchu, Taiwan*  
 ² *MediaTek, Hsinchu, Taiwan*  
 
----
 
 ## Teaser
 ![teaser](assets/teaser.png) 
 
----
 
 ## Abstract
 Facial landmark detectors trained on real human faces often fail to generalize effectively to stylized domains such as caricatures and artistic portraits, necessitating unsupervised domain adaptation (UDA). Although self-training is a widely used UDA strategy to bridge domain gaps, it frequently breaks down under large domain shifts as it is prone to amplifying confident yet erroneous pseudo-label predictions. To this end, we propose **PriSM (Parsing and Style-Mixed Consistency)**, a novel method for robust landmark pseudo-label validation. PriSM leverages two complementary signals: a **Parsing Network** enforces high-level structural alignment through face parsing consistency, while a **StyleMix Network** enforces fine-grained geometric constraints by reducing the reconstruction error between the input face and another face synthesized from the pseudo-label’s structure and the input face’s appearance. Extensive experiments on the challenging CariFace and ArtiFace benchmarks under the UDA setting demonstrate that PriSM significantly outperforms existing state-of-the-art methods and exhibits strong generalizability to unseen domains.
 
----
 
 ## Overview
 ![framework](assets/framework.png)
@@ -48,7 +45,15 @@ PriSM-UDA/
 
 ## Data Preparation
 
-We conduct experiments on three facial landmark datasets: **300W** (Source domain), **CariFace** (Target domain 1), and **ArtiFace** (Target domain 2).
+We conduct experiments on three facial landmark datasets: **300W** (Source domain), **CariFace** (Target domain 1), and **ArtiFace** (Target domain 2). 
+
+The raw images and original landmark annotations should be obtained from their official releases:
+* **300W**: [Official 300W Challenge Site](https://ibug.doc.ic.ac.uk/resources/300-W/)
+* **CariFace**: [CariFace Official Repository](https://github.com/caihaoyu/CariFace)
+* **ArtiFace**: [The Face of Art (ArtiFace Repo)](https://github.com/YanivYaniv/FaceOfArt)
+
+> 💡 **Train/Test Splits**:
+> The exact training and testing splits (`train_list.txt`, `test_list.txt`, etc.) used in our experiments are **already included directly in this codebase** inside the `./Dataset` directory.
 
 Please download the datasets and structure your `./Dataset` directory as follows:
 
@@ -109,7 +114,6 @@ python extract_parsing.py --arch FaceParseNet101 \
                           --weight_path ../../pretrained_models/38_G.pth \
                           --input_dir ../../Dataset/YOUR_DATASET/images \
                           --output_dir ../../Dataset/YOUR_DATASET/parsing
-cd ../..
 ```
 
 ### 2. Extract StyleGAN Latent Codes ($w_a$)
@@ -119,7 +123,6 @@ cd preprocess/GAN_inversion
 python inversion_whole.py --input_dir ../../Dataset/YOUR_DATASET/images \
                           --output_dir ../../Dataset/YOUR_DATASET/output_batch \
                           --ckpt ../../pretrained_models/styleganex_inversion.pt
-cd ../..
 ```
 
 ---
