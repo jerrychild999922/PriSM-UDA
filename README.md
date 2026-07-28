@@ -32,9 +32,6 @@ To run our code, please organize your workspace as follows:
 PriSM-UDA/
 ├── configs/                      # Configuration files for the baseline landmark detector
 ├── data/                         # Dataloader scripts
-│   ├── Artistic.py               (Dataloader for target domain)
-│   ├── Combine_new_artistic.py   (Dataloader for mixed source/target self-training)
-│   └── W300.py                   (Dataloader for source domain)
 ├── Landmark2/                    # Source code for the baseline SLPT landmark alignment network
 ├── models/                       # PriSM model modules (PSP, Segmentation)
 │   ├── psp.py
@@ -42,7 +39,7 @@ PriSM-UDA/
 ├── preprocess/                   # Isolated preprocessing scripts
 │   ├── face_parsing/             (Face parsing extraction tool)
 │   └── GAN_inversion/            (StyleGAN latent inversion tool)
-├── Dataset/                      # Place your datasets here (not uploaded to GitHub)
+├── Dataset/                      # Place your datasets here
 │   ├── 300W/
 │   ├── CariFace_dataset/
 │   └── AF_dataset/
